@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>My Website</title>
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+			#header {
+				background-color: #2196f3;
+				height: 100px;
+			}
+			#header-text {
+				padding-top: 25px;
+				padding-left: 25px;
+			}
+			#main-area {
+				background-color: #546e7a;
+				height: 200%;
+			}
+			.entry-header {
+				margin: 0;
+				padding: 0;
+				color: white;
+				padding-top: 25px;
+				padding-left: 25px;
+				margin-bottom: 10px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1 id="header-text" style="color: white;">My Website</h1>
+		</div>
+		<div id="main-area">
+			<div class="entry-header">
+				<h2>Welcome to my website</h2>
+			</div>
+			
+			<div class="entry-header">
+				<p id="text">This is some text.</p>
+				<button onclick="changeText()">Change the Text!</button>
+			</div>
+			
+			<div class="entry-header">
+				<!--greet the user-->
+				<input type="text" id="name-input" />
+				<button onclick="sayHi()">Enter name!</button>
+				<p id="displayText"></p>
+			</div>
+			
+			<div class="entry-header">
+				<!--show the turtle project-->
+				<button id="showTurtleBtn" onclick="showTurtle()">Show my turtle project!</button> 
+				<br />
+				<iframe id="turtleProj" src="https://trinket.io/embed/python/8803cf36f2?outputOnly=true" style="width: 400px; height: 400px; visibility: hidden;" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+			</div>
+			
+			<div class="entry-header">
+				<!--change the image src-->
+				<img id="sadFace" style="width: 300px; height: 300px;" src="https://rlv.zcache.com/sad_face_classic_round_sticker-r861f65fdcb8640dca0261c60f986f8a4_v9waf_8byvr_324.jpg" />
+				<br />
+				<button onclick="changeImg()">Turn that frown upside down!</button>
+			</div>
+			
+			<div class="entry-header">
+				<button onclick="increaseCount()">Click me!</button>
+				<p id="count">This button has been clicked 0 times</p>
+			</div>
+		</div>
+		
+		<script>
+			function sayHi()
+			{
+				//THIS IS A DEMO
+				var name = document.getElementById("name-input").value;
+				console.log("The name entered was " + name);
+				document.getElementById("displayText").innerHTML = "Hello " + name + " !";
+			}
+			
+			function changeText()
+			{
+				//THIS IS A DEMO
+				document.getElementById("text").innerHTML = "This is some cHaNgEd text!";
+			}
+			
+			function showTurtle() 
+			{
+				//THIS IS A DEMO
+				if (document.getElementById("turtleProj").style.visibility == "hidden") {
+					document.getElementById("turtleProj").style.visibility = "visible";
+					document.getElementById("showTurtleBtn").innerHTML = "Hide my turtle project!";
+				} else {
+					document.getElementById("turtleProj").style.visibility = "hidden";
+					document.getElementById("showTurtleBtn").innerHTML = "Show my turtle project!";
+				}
+			}
+			
+			function changeImg() 
+			{
+				document.getElementById("sadFace").src = "https://s3.minijuegosgratis.com/media/video-collection-img/video-collection-trollface-thumb.jpg?v=_1508337290";
+			}
+			
+			function guessFavNum() {
+				var num = 0;				
+			}
+			
+			var count = 0;
+			function increaseCount() {
+				//THIS IS A DEMO	
+				count = count + 1;
+				document.getElementById("count").innerHTML = "This button has been clicked " + count + " times!	";
+			}
+		</script>
+	</body>
+</html>
